@@ -5,10 +5,6 @@
 const char* VER_NAME = "Tokikagura";
 
 const unsigned VER_MAJOR = 0;
-const unsigned VER_MINOR = 14;
-const unsigned VER_BUILD = 1628;
-
-const char* VER_STRING = "version 0.14.1628 built on 2014/10/23 11:27:54";
 const unsigned VER_MINOR = 15;
 const unsigned VER_BUILD = 1623;
 
@@ -19,4 +15,3 @@ const char* MODE_STRING = "DEBUG";
 #else
 const char* MODE_STRING = "RELEASE";
 #endif
-
