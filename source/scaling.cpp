@@ -35,7 +35,7 @@ Scaler::Scaler(IDirect3DDevice9 *device, int inputwidth, int inputheight, int wi
 	levels = max( max(0, static_cast<int>(ceil(Log2(static_cast<double>(inputwidth)/width)-1))), 
 		          max(0, static_cast<int>(ceil(Log2(static_cast<double>(inputheight)/height)-1))) );
 	SDLOG(2, "Scaler: Generating %u multi-level buffers\n", levels);
-	ss << "Upsampling: " << levels+1 << " level" << (levels?"s ":" ");
+	ss << "Downsampling: " << levels+1 << " level" << (levels?"s ":" ");
 	levelInputSizes = new FLOAT[levels*2+2];
 	levelInputSizes[levels*2+0] = static_cast<FLOAT>(width*2); 
 	levelInputSizes[levels*2+1] = static_cast<FLOAT>(height*2); 
