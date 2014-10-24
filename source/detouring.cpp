@@ -403,11 +403,8 @@ GENERATE_INTERCEPT_HEADER(ClipCursor, BOOL, WINAPI, __in_opt CONST RECT *lpRect)
 }
 
 GENERATE_INTERCEPT_HEADER(WindowFromPoint, HWND, WINAPI, _In_ POINT Point) {
-	if(RSManager::currentlyDownsampling() && Settings::get().getModifyGetCursorPos()) {
-		Point.x = Point.x * Settings::get().getPresentWidth() / Settings::get().getRenderWidth();
-		Point.y = Point.y * Settings::get().getPresentHeight() / Settings::get().getRenderHeight();
-	}
-	return TrueWindowFromPoint(Point);
+	return GetActiveWindow();
+	//return TrueWindowFromPoint(Point);
 }
 
 // Messages /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
