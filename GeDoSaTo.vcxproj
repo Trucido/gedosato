@@ -224,7 +224,7 @@
     <PostBuildEvent>
       <Command>copy "$(TargetPath)" "$(ProjectDir)pack"</Command>
 	</PostBuildEvent>
-    <Prebuildevent>
+    <PreBuildEvent>
 	  <Command>ruby version.rb</Command>
     </PreBuildEvent>
     <PreBuildEvent>
