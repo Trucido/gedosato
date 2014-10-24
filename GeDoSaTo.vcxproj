@@ -75,7 +75,7 @@
     <IntDir Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">.\Debug\</IntDir>
     <LinkIncremental Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">false</LinkIncremental>
     <LinkIncremental Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">false</LinkIncremental>
-    <IncludePath Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">include;defs;T:\Dev\NVAPI;T:\Dev\boost;T:\Dev\Ruby\lib\ruby\gems\2.1.0\gems\selene-0.3.1\include;T:\Dev\Lua\include;D:\Git\minhook\include;T:\Dev\Microsoft DirectX SDK (August 2009)\Include;$(IncludePath)</IncludePath>
+    <IncludePath Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">include;defs;T:\Dev\NVAPI;T:\Dev\boost;T:\Dev\Ruby\lib\ruby\gems\2.1.0\gems\selene-0.3.1\include;T:\Dev\Lua\include;T:\Dev\minhook\include;T:\Dev\Microsoft DirectX SDK (August 2009)\Include;$(IncludePath)</IncludePath>
     <IncludePath Condition="'$(Configuration)|$(Platform)'=='Release|x64'">E:\Program Files %28x86%29\Microsoft DirectX SDK %28June 2010%29\Include;$(IncludePath)</IncludePath>
     <TargetName Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">GeDoSaTo</TargetName>
     <TargetName Condition="'$(Configuration)|$(Platform)'=='Release|x64'">d3d9</TargetName>
@@ -83,7 +83,7 @@
     <TargetName Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">d3d9</TargetName>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
-    <LibraryPath>T:\Dev\NVAPI\x86;T:\Dev\boost\lib32-msvc-12.0;T:\Dev\Lua;D:\Git\minhook\build\VC12\lib\Release;T:\Dev\Microsoft DirectX SDK (August 2009)\Lib\x86;$(LibraryPath)</LibraryPath>
+    <LibraryPath>T:\Dev\NVAPI\x86;T:\Dev\boost\lib32-msvc-12.0;T:\Dev\Lua;T:\Dev\minhook\build\VC12\lib\Release;T:\Dev\Microsoft DirectX SDK (August 2009)\Lib\x86;$(LibraryPath)</LibraryPath>
     <ExcludePath>$(VC_IncludePath);$(WindowsSdk_71A_IncludePath);$(MSBuild_ExecutablePath);$(VC_LibraryPath_x86);</ExcludePath>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
@@ -139,10 +139,11 @@
       <Culture>0x0409</Culture>
     </ResourceCompile>
     <PostBuildEvent>
-      <Command>copy "$(TargetPath)" "$(ProjectDir)pack"</Command>
+      <Command>copy $(TargetPath) $SolutionDir..\pack </Command>
     </PostBuildEvent>
     <PreBuildEvent>
-      <Command>ruby version.rb</Command>
+      <Command>
+      </Command>
     </PreBuildEvent>
     <PreBuildEvent>
       <Message>Versioning</Message>
@@ -223,9 +224,6 @@
     <PostBuildEvent>
       <Command>copy "$(TargetPath)" "$(ProjectDir)pack"</Command>
     </PostBuildEvent>
-    <PreBuildEvent>
-      <Command>ruby version.rb</Command>
-    </PreBuildEvent>
     <PreBuildEvent>
       <Message>Versioning</Message>
     </PreBuildEvent>
