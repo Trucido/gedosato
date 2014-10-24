@@ -103,7 +103,7 @@
       <AssemblerListingLocation>.\Release/</AssemblerListingLocation>
       <ObjectFileName>.\Release/</ObjectFileName>
       <ProgramDataBaseFileName>.\Release/</ProgramDataBaseFileName>
-      <WarningLevel>Level4</WarningLevel>
+      <WarningLevel>Level3</WarningLevel>
       <SuppressStartupBanner>true</SuppressStartupBanner>
       <IntrinsicFunctions>true</IntrinsicFunctions>
       <FavorSizeOrSpeed>Size</FavorSizeOrSpeed>
@@ -139,11 +139,10 @@
       <Culture>0x0409</Culture>
     </ResourceCompile>
     <PostBuildEvent>
-      <Command>copy $(TargetPath) $SolutionDir..\pack </Command>
+      <Command>copy "$(TargetPath)" "$(ProjectDir)pack"</Command>
     </PostBuildEvent>
     <PreBuildEvent>
-      <Command>
-      </Command>
+      <Command>ruby version.rb</Command>
     </PreBuildEvent>
     <PreBuildEvent>
       <Message>Versioning</Message>
@@ -223,9 +222,9 @@
     </ResourceCompile>
     <PostBuildEvent>
       <Command>copy "$(TargetPath)" "$(ProjectDir)pack"</Command>
-	</PostBuildEvent>
+    </PostBuildEvent>
     <PreBuildEvent>
-	  <Command>ruby version.rb</Command>
+      <Command>ruby version.rb</Command>
     </PreBuildEvent>
     <PreBuildEvent>
       <Message>Versioning</Message>
