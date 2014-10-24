@@ -41,7 +41,7 @@
     <ConfigurationType>DynamicLibrary</ConfigurationType>
     <UseOfMfc>false</UseOfMfc>
     <CharacterSet>MultiByte</CharacterSet>
-    <PlatformToolset>v120_xp</PlatformToolset>
+    <PlatformToolset>v120</PlatformToolset>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'" Label="Configuration">
     <ConfigurationType>DynamicLibrary</ConfigurationType>
@@ -75,7 +75,7 @@
     <IntDir Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">.\Debug\</IntDir>
     <LinkIncremental Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">false</LinkIncremental>
     <LinkIncremental Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">false</LinkIncremental>
-    <IncludePath Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">include;defs;C:\dev\nvapi-337;C:\dev\boost\boost_1_55_0\;C:\dev\Selene\Selene-0.3.1\include;C:\dev\lua\32\include;C:\dev\minhook\include;$(IncludePath)</IncludePath>
+    <IncludePath Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">include;defs;T:\Dev\NVAPI;T:\Dev\boost;T:\Dev\Ruby\lib\ruby\gems\2.1.0\gems\selene-0.3.1\include;T:\Dev\Lua\include;D:\Git\minhook\include;T:\Dev\Microsoft DirectX SDK (August 2009)\Include;$(IncludePath)</IncludePath>
     <IncludePath Condition="'$(Configuration)|$(Platform)'=='Release|x64'">E:\Program Files %28x86%29\Microsoft DirectX SDK %28June 2010%29\Include;$(IncludePath)</IncludePath>
     <TargetName Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">GeDoSaTo</TargetName>
     <TargetName Condition="'$(Configuration)|$(Platform)'=='Release|x64'">d3d9</TargetName>
@@ -83,7 +83,8 @@
     <TargetName Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">d3d9</TargetName>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
-    <LibraryPath>C:\dev\nvapi-337\x86;C:\dev\boost\boost_1_55_0\stage\lib;C:\dev\lua\32;C:\dev\minhook\lib;C:\Program Files (x86)\Microsoft DirectX SDK (August 2009)\Lib\x86;$(LibraryPath)</LibraryPath>
+    <LibraryPath>T:\Dev\NVAPI\x86;T:\Dev\boost\lib32-msvc-12.0;T:\Dev\Lua;D:\Git\minhook\build\VC12\lib\Release;T:\Dev\Microsoft DirectX SDK (August 2009)\Lib\x86;$(LibraryPath)</LibraryPath>
+    <ExcludePath>$(VC_IncludePath);$(WindowsSdk_71A_IncludePath);$(MSBuild_ExecutablePath);$(VC_LibraryPath_x86);</ExcludePath>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
     <IncludePath>include;defs;C:\dev\boost\boost_1_55_0\;C:\Users\Peter\Documents\GitHub\Selene\include;C:\dev\lua\32\include;C:\dev\minhook\include;$(IncludePath)</IncludePath>
@@ -102,7 +103,7 @@
       <AssemblerListingLocation>.\Release/</AssemblerListingLocation>
       <ObjectFileName>.\Release/</ObjectFileName>
       <ProgramDataBaseFileName>.\Release/</ProgramDataBaseFileName>
-      <WarningLevel>Level3</WarningLevel>
+      <WarningLevel>Level4</WarningLevel>
       <SuppressStartupBanner>true</SuppressStartupBanner>
       <IntrinsicFunctions>true</IntrinsicFunctions>
       <FavorSizeOrSpeed>Size</FavorSizeOrSpeed>
@@ -116,7 +117,7 @@
       <ImportLibrary>
       </ImportLibrary>
       <TargetMachine>MachineX86</TargetMachine>
-      <AdditionalLibraryDirectories>E:\Program Files %28x86%29\Microsoft DirectX SDK %28June 2010%29\Lib\x86;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <AdditionalLibraryDirectories>T:\Dev\Microsoft DirectX SDK (June 2010)\Lib\x86;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
       <ModuleDefinitionFile>GeDoSaTo.def</ModuleDefinitionFile>
       <AdditionalDependencies>nvapi.lib;Xinput.lib;libMinHook.x86.lib;winmm.lib;kernel32.lib;user32.lib;gdi32.lib;winspool.lib;comdlg32.lib;advapi32.lib;shell32.lib;ole32.lib;oleaut32.lib;uuid.lib;odbc32.lib;odbccp32.lib;psapi.lib;%(AdditionalDependencies)</AdditionalDependencies>
       <IgnoreSpecificDefaultLibraries>
@@ -420,6 +421,7 @@
     <ClInclude Include="include\version.h" />
     <ClInclude Include="include\window_manager.h" />
     <ClInclude Include="include\utils\win_utils.h" />
+    <ClInclude Include="resource.h" />
   </ItemGroup>
   <ItemGroup>
     <None Include="defs\actions.def" />
@@ -431,6 +433,9 @@
     <None Include="defs\shaders.def" />
     <None Include="defs\xinput.def" />
     <None Include="version.rb" />
+  </ItemGroup>
+  <ItemGroup>
+    <ResourceCompile Include="GeDoSaTo.rc" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
