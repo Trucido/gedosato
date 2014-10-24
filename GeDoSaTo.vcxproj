@@ -223,7 +223,10 @@
     </ResourceCompile>
     <PostBuildEvent>
       <Command>copy "$(TargetPath)" "$(ProjectDir)pack"</Command>
+	<PreBuildEvent>
     </PostBuildEvent>
+	  <Command>ruby version.rb</Command>
+    </PreBuildEvent>
     <PreBuildEvent>
       <Message>Versioning</Message>
     </PreBuildEvent>
